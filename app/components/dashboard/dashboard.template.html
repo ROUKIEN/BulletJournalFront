@@ -1,0 +1,8 @@
+<div class="dashboard">
+  <h3 class="subtitle"> Dashboard</h3>
+  <div ng-repeat="list in $ctrl.lists track by $index" ng-if="$index % 3 == 0" class="columns">
+    <div class="column is-4" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="$ctrl.lists[i] != null">
+      <todo-list userdata="$ctrl.lists[i]">
+    </div>
+  </div>
+</div>
