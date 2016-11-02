@@ -7,7 +7,6 @@ angular.module('bulletJournal.todoList')
     },
     templateUrl: 'components/todo-list/todo-list.template.html',
     controller: ['Task', function TodoListCtrl(Task) {
-      this.tasks = Task.query();
     }
   ]
 });

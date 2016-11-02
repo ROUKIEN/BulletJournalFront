@@ -1,0 +1,32 @@
+<div class="task-form">
+  <h3 class="subtitle" ng-if="$ctrl.task.task_id > 0">Update task #{{$ctrl.task.task_id}}</h3>
+  <h3 class="subtitle" ng-if="!$ctrl.task.task_id">New task</h3>
+  <form ng-submit="$ctrl.save($ctrl.task)">
+    <label>Title</label>
+    <p class="control">
+      <input class="input" type="text" ng-model="$ctrl.task.title" placeholder="task title">
+    </p>
+    <label class="summary">Summary</label>
+    <p class="control">
+      <textarea class="textarea" ng-model="$ctrl.task.summary"></textarea>
+    </p>
+    <label class="priority">Priority</label>
+    <p class="control">
+      <span class="select">
+        <select ng-model="$ctrl.task.priority" ng-selected="$ctrl.task.priority">
+          <option value="1">1. Low</option>
+          <option value="2">2. Med</option>
+          <option value="3">3. Max</option>
+        </select>
+      </span>
+    </p>
+    <label class="due-date">Due date</label>
+    <p class="control">
+      <input class="input" type="text" ng-model="$ctrl.task.due_date" placeholder="task due date (YYYY-mm-dd)">
+    </p>
+    <p class="control">
+      <button class="button is-primary">Submit</button>
+      <button class="button is-link">Cancel</button>
+    </p>
+  </form>
+</div>

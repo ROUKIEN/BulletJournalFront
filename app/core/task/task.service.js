@@ -1,11 +1,18 @@
 angular.module('bulletJournal.core.task')
   .factory('Task', ['$resource',
     function($resource) {
-      return $resource('http://localhost:8000/tasks/:taskId', {}, {
+      return $resource('http://localhost:8000/tasks/:taskId', {taskId: '@task_id'}, {
         query: {
           method: 'GET',
           params: {taskId: ''},
           isArray: true
+        },
+        update: {
+          method: 'PUT'
+        },
+        deleteTask: {
+          method: 'DELETE',
+          params: {taskId: ''}
         }
       });
     }

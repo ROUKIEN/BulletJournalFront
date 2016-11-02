@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/bulma/css/bulma.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -21,7 +22,8 @@
       <div class="container">
         <nav class="nav">
           <div class="nav-left">
-            <a href="/" class="nav-item is-brand">BulletJournal</a>
+            <a href="#!/" class="nav-item is-brand">BulletJournal</a>
+            <a href="#!/task/create" class="nav-item is-brand">Create Task</a>
           </div>
           <div class="nav-right">
             <a href="#" class="nav-item">Github repo</a>
@@ -62,7 +64,7 @@
       </div>
       <footer class="footer">
         <div class="container">
-          <div class="content has-text-centered">Angular seed app: v<span app-version></span></div>
+          <div class="content has-text-centered">BulletJournal Front: v<span app-version></span></div>
         </div>
       </footer>
     </div>
@@ -75,6 +77,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
+
     <script src="app.js"></script>
     <script src="view1/view1.js"></script>
     <script src="view2/view2.js"></script>
@@ -84,6 +87,7 @@
 
     <script src="core/task/task.module.js"></script>
     <script src="core/task/task.service.js"></script>
+    <script src="core/task/taskNotAssigned.service.js"></script>
 
     <script src="core/user/user.module.js"></script>
     <script src="core/user/user.service.js"></script>
@@ -92,6 +96,10 @@
     <script src="components/todo-list/todo-list.component.js"></script>
     <script src="components/dashboard/dashboard.module.js"></script>
     <script src="components/dashboard/dashboard.component.js"></script>
+    <script src="components/user-tasks/user-tasks.module.js"></script>
+    <script src="components/user-tasks/user-tasks.component.js"></script>
+    <script src="components/task-form/task-form.module.js"></script>
+    <script src="components/task-form/task-form.component.js"></script>
 
     <script src="taskView/taskView.js"></script>
     <script src="components/version/version.js"></script>

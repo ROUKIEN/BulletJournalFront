@@ -1,0 +1,37 @@
+<div class="user-tasks">
+  <h3 class="subtitle">{{ $ctrl.user.username }}'s Tasks 
+  </h3>
+  <div ng-repeat="task in $ctrl.user.tasks track by $index">
+    <div class="columns">
+      <div class="box column is-12">
+        <article class="media task">
+          <div class="media-content">
+            <div class="content">
+              <p>
+              <strong><a href="#!/task/{{task.task_id}}">#{{ task.task_id + ' - ' + task.title }}</a></strong> 
+              <small> 
+                <span> reported : {{task.created_at | momentize }} Due date : {{ task.due_date | momentize }} </span>
+              </small><br />
+              {{ task.summary }}
+              </p>
+            </div>
+            <nav class="level">
+              <div class="level-left">
+                <span class="level-item">
+                  <span ng-if="!task.done" class="tag is-small is-danger">Open</span>
+                  <span ng-if="task.done" class="tag is-small is-success">Closed</span>
+                </span>
+                <span class="level-item"><span class="tag is-info is-small">priority : {{ task.priority | prioritize }}</span> </span>
+                <div ng-if="!task.done">
+                <a class="level-item" ng-click="$ctrl.toggleTaskDone(task)"><i class="fa fa-check-circle-o"></i></a>
+                <a class="level-item" href="#!/task/update/{{ task.task_id }}"><i class="fa fa-pencil-square-o"></i></a>
+                </div>
+                <a class="level-item" ng-click="$ctrl.deleteTask(task)"><i class="fa fa-trash"></i></a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

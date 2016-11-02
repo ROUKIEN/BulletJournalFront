@@ -5,7 +5,9 @@ angular.module('bulletJournal', [
   'ngRoute',
   'bulletJournal.todoList',
   'bulletJournal.dashboard',
+  'bulletJournal.userTasks',
   'bulletJournal.taskView',
+  'bulletJournal.taskForm',
   'bulletJournal.view1',
   'bulletJournal.view2',
   'bulletJournal.version',
@@ -15,11 +17,17 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!');
   
   $routeProvider
-    .when('/overview', {
-      template: '<todo-list></todo-list>'
-    })
     .when('/dashboard', {
       template: '<dashboard></dashboard>'
     })
-    .otherwise({redirectTo: '/overview'});
+    .when('/task/create', {
+      template: '<task-form></task-form>'
+    })
+    .when('/task/update/:taskId', {
+      template: '<task-form></task-form>'
+    })
+    .when('/user/:userId', {
+      template: '<user-tasks></user-tasks>'
+    })
+    .otherwise({redirectTo: '/dashboard'});
 }]);
