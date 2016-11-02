@@ -13,10 +13,10 @@
     <label class="priority">Priority</label>
     <p class="control">
       <span class="select">
-        <select ng-model="$ctrl.task.priority" ng-selected="$ctrl.task.priority">
-          <option value="1">1. Low</option>
-          <option value="2">2. Med</option>
-          <option value="3">3. Max</option>
+        <select ng-model="$ctrl.task.priority">
+          <option value="1" ng-selected="$ctrl.task.priority == 1">1.Low</option>
+          <option value="2" ng-selected="$ctrl.task.priority == 2">2.Med</option>
+          <option value="3" ng-selected="$ctrl.task.priority == 3">3.Max</option>
         </select>
       </span>
     </p>

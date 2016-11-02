@@ -6,6 +6,7 @@ angular.module('bulletJournal.taskForm')
     controller: ['$routeParams', 'User', 'Task', function TaskFormCtrl($routeParams, User, Task) {
       
       this.task = {};
+
       var t = this;
       if($routeParams.taskId > 0) {
         this.task.task_id = $routeParams.taskId;
