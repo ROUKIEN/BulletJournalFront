@@ -26,7 +26,8 @@
             <a href="#!/task/create" class="nav-item is-brand">Create Task</a>
           </div>
           <div class="nav-right">
-            <a href="#" class="nav-item">Github repo</a>
+            <a href="#" class="nav-item">Frontend Github repo</a>
+            <a href="#" class="nav-item">API Github repo</a>
           </div>
         </nav>
       </div>
@@ -39,23 +40,7 @@
     <div class="container">
       <div class="columns">
         <div class="column is-3">
-          <aside class="menu">
-            <p class="menu-label">
-            General
-            </p>
-            <ul class="menu-list">
-              <li><a href="#">Rukien's tasks</a></li>
-              <li><a href="#">Bob's tasks</a></li>
-              <li><a href="#">Alice's tasks</a></li>
-            </ul>
-            <p class="menu-label">
-            Admin
-            </p>
-            <ul class="menu-list">
-              <li><a href="#">Reset all</a></li>
-              <li><a href="#">Delete all tasks</a></li>
-            </ul>
-          </aside>
+          <unassigned-tasks></unassigned-tasks>
         </div>
         <div class="column is-9">
           <h1 class="title">Tasks management</h1>
@@ -92,6 +77,10 @@
     <script src="core/user/user.module.js"></script>
     <script src="core/user/user.service.js"></script>
 
+    <script src="components/assign/assign.module.js"></script>
+    <script src="components/assign/assign.component.js"></script>
+    <script src="components/unassigned-tasks/unassigned-tasks.module.js"></script>
+    <script src="components/unassigned-tasks/unassigned-tasks.component.js"></script>
     <script src="components/todo-list/todo-list.module.js"></script>
     <script src="components/todo-list/todo-list.component.js"></script>
     <script src="components/dashboard/dashboard.module.js"></script>

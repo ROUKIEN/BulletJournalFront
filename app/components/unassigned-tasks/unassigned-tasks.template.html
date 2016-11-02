@@ -1,0 +1,7 @@
+<nav class="panel">
+  <p class="panel-heading">Unassigned tasks :</p>
+  <div ng-repeat="task in $ctrl.tasks" class="panel-block">
+    {{ task.title }} - <a href="#!/task/{{task.task_id}}/assign" class="button is-small">Assign</a><br /> 
+    <small>Added : {{ task.created_at | momentize}}</small> 
+  </div>
+</nav>

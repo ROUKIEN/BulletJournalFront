@@ -19,7 +19,6 @@ angular.module('bulletJournal.taskForm')
         if(!task.task_id) {
           // creating a task
           console.log('creating task')
-          console.log(task)
           Task.save(task, function(task) {
             //$location.path('/');
           })

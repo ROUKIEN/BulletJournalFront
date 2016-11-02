@@ -1,0 +1,26 @@
+<h3 class="subtitle">Assign task #{{$ctrl.task.task_id}} to users</h3>
+<div class="columns">
+
+  <div class="task column is-9">
+    <article class="message">
+      <div class="message-header">{{$ctrl.task.title}}</div>
+      <div class="message-body">
+        {{ $ctrl.task.summary }}
+      </div>
+    </article>
+  </div>
+  <div class="column is-3">
+    <div>{{$ctrl.task | json}}</div>
+    <form ng-submit="$ctrl.assignUser($ctrl.task)">
+      <p>Select a user to assign to the task in the list (current : {{ $ctrl.task.assignee.username }} ) :</p>
+      <p class="control has-addons">
+      <span class="select">
+         <select ng-model="$ctrl.task.assignee.user_id">
+           <option ng-repeat="user in $ctrl.users" value="{{user.user_id}}" ng-selected="{{user.user_id == $ctrl.task.assignee.user_id}}">{{user.username}}</option>
+        </select>
+      </span>
+      <button class="button is-primary">Assign</button>
+      </p>
+    </form>
+  </div>
+</div>

@@ -8,6 +8,8 @@ angular.module('bulletJournal', [
   'bulletJournal.userTasks',
   'bulletJournal.taskView',
   'bulletJournal.taskForm',
+  'bulletJournal.unassignedTasks',
+  'bulletJournal.assign',
   'bulletJournal.view1',
   'bulletJournal.view2',
   'bulletJournal.version',
@@ -19,6 +21,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider
     .when('/dashboard', {
       template: '<dashboard></dashboard>'
+    })
+    .when('/task/:taskId/assign', {
+      template: '<assign></assign>'
     })
     .when('/task/create', {
       template: '<task-form></task-form>'

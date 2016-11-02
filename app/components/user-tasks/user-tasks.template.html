@@ -8,7 +8,7 @@
           <div class="media-content">
             <div class="content">
               <p>
-              <strong><a href="#!/task/{{task.task_id}}">#{{ task.task_id + ' - ' + task.title }}</a></strong> 
+              <strong><a href="#!/task/update/{{task.task_id}}">#{{ task.task_id + ' - ' + task.title }}</a></strong> 
               <small> 
                 <span> reported : {{task.created_at | momentize }} Due date : {{ task.due_date | momentize }} </span>
               </small><br />

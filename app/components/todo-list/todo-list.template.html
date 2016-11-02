@@ -5,12 +5,11 @@
   <div class="card-content content">
   <ul class="todo-list">
       <li ng-repeat="task in $ctrl.userdata.tasks">
-        <span class="tag is-info is-small priority">{{ task.priority | prioritize }}</span> <a href="#!/task/{{task.task_id}}">{{ task.title }}</a> <small>{{task.due_date.date | momentize }}</small>
+        <span class="tag is-info is-small priority">{{ task.priority | prioritize }}</span> <a href="#!/task/update/{{task.task_id}}">{{ task.title }}</a> <small>{{task.due_date.date | momentize }}</small>
       </li>
     </ul>
   </div>
   <footer class="card-footer">
-    <a href="#!/new-task" class="card-footer-item">Assign new Task</a>
     <a href="#!/user/{{ $ctrl.userdata.user_id }}" class="card-footer-item">See all</a>
   </footer>
 </div>
