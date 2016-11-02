@@ -1,7 +1,7 @@
 angular.module('bulletJournal.core.task')
-  .factory('Task', ['$resource',
-    function($resource) {
-      return $resource('http://localhost:8000/tasks/:taskId', {taskId: '@task_id'}, {
+  .factory('Task', ['$resource', 'api_url',
+    function($resource, api_url) {
+      return $resource(api_url+'/tasks/:taskId', {taskId: '@task_id'}, {
         query: {
           method: 'GET',
           params: {taskId: ''},
