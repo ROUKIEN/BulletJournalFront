@@ -3,7 +3,7 @@
 angular.module('bulletJournal.taskForm')
   .component('taskForm', {
     templateUrl: 'components/task-form/task-form.template.html',
-    controller: ['$routeParams', 'User', 'Task', function TaskFormCtrl($routeParams, User, Task) {
+    controller: ['$routeParams', '$window', 'User', 'Task', function TaskFormCtrl($routeParams, $window, User, Task) {
       
       this.task = {};
 
@@ -20,14 +20,16 @@ angular.module('bulletJournal.taskForm')
           // creating a task
           console.log('creating task')
           Task.save(task, function(task) {
-            //$location.path('/');
+            $window.alert('Task created !');
+            $window.location.href ='/';
           })
         } else {
           //updating a task
           console.log('updating task')
           Task.update(task, function(task) {
             console.log('updated')
-            //$location.path('/');
+            $window.alert('Task Updated !');
+            $window.location.href = '/';
           })
         }
         return false

@@ -10,7 +10,6 @@
     </article>
   </div>
   <div class="column is-3">
-    <div>{{$ctrl.task | json}}</div>
     <form ng-submit="$ctrl.assignUser($ctrl.task)">
       <p>Select a user to assign to the task in the list (current : {{ $ctrl.task.assignee.username }} ) :</p>
       <p class="control has-addons">
